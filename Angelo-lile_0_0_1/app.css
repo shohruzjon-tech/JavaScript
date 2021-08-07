@@ -1,0 +1,22 @@
+:root{
+    --back-color:rgb(255, 255, 255);
+    --buttons-color: red;
+}
+
+.root{
+    /* width:60vw; */
+    margin-left:2%;
+    background-color: var(--back-color);
+}
+.story{
+    padding: 10px;
+    border-radius: 2%;
+    border: 1px solid #eee;
+    border-left-width: 3px;
+    border-left-color: rgb(54, 50, 50);
+    cursor: pointer;
+    
+}
+/* .addStotyButton{
+    background-color: var(--buttons-color);
+} */

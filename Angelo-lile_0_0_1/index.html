@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Angello">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <title>Angello</title>
+</head>
+<body>
+    
+    <div class="root" ng-controller="MainCtrl as main">
+        <h2>{{main.title}}</h2>
+        <div class="col-md-4">
+            <h2>Stories</h2>
+            <story 
+                class="story"
+                ng-repeat="story in main.stories"
+                ng-click="main.setCurrentStory(story)">
+            </story>
+            <a class="addStotyButton" ng-click="main.addNewStory()">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+    
+</body>
+</html>
