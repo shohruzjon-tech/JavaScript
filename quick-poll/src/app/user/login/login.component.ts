@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent implements OnInit {
   loginForm : FormGroup;
+  authenticatedFailed:boolean = false;
   constructor(private formBuilder:FormBuilder,private router:Router,private userService:UserService) { 
     this.loginForm = this.formBuilder.group({
       username :['',Validators.required],
@@ -19,8 +20,17 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  login(){
-    this.userService.login(this.loginForm.value);
+  login(){    
+    this.userService.login(this.loginForm.value).subscribe(reply=>{
+      localStorage.setItem('Access-token','bearer '+reply.Access_token);
+      this.authenticatedFailed = false;
+      this.router.navigate(['']);
+    },
+      error =>{
+        this.authenticatedFailed = true;
+      } 
+      );
+    
   }
 
 }

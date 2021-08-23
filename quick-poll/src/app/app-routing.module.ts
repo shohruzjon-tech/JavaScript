@@ -5,8 +5,8 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { VoteComponent } from './vote/vote.component';
 
 const routes: Routes = [
-  {path:'',loadChildren:'app/app.module#AppModule'},
-  // {path:'',component:DashboardComponent,canActivate:[AuthGuardService]}
+  {path:'user',loadChildren:()=> import('./user/user.module').then(mdl=> mdl.UserModule)},
+  {path:'',component:DashboardComponent}
 ];
 
 @NgModule({

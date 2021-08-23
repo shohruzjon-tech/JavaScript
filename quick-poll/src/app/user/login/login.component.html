@@ -12,11 +12,12 @@
                         <input formControlName="username" type="text" clrInput placeholder="Username"/>
                         <clr-control-error *ngIf="loginForm.get('username')?.invalid">Username is Required</clr-control-error>
                     </clr-input-container>                    
-                    <clr-input-container>
+                    <clr-input-container style="margin-bottom: 20px;">
                         <label>Password</label>
                         <input formControlName="password" type="password" clrInput placeholder="Password"/>
                         <clr-control-error *ngIf="loginForm.get('password')?.invalid">Password is Required</clr-control-error>
-                    </clr-input-container>                    
+                    </clr-input-container>
+                    <clr-control-error *ngIf="authenticatedFailed" style="margin-bottom: 20px;">Invalid Username or Password</clr-control-error>                    
                     <button class="btn btn-Secondary" type="button" routerLink="/register">Register</button>
                     <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid" >Login</button>
                 </form>
