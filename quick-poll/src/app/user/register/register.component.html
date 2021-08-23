@@ -1,0 +1,37 @@
+<div class="clr-row clr-aling-items-center">
+    <div class="clr-col"></div>
+    <div class="clr-col-5 ">
+        <div class="card">
+            <div class="card-header">
+                <span>Register</span>
+            </div>
+            <div class="card-content">
+                <form clrForm [formGroup]="registerForm" (submit)="register()">
+                    <clr-input-container>
+                        <label>Username</label>
+                        <input formControlName="username" type="text" clrInput placeholder="Username">
+                        <clr-control-error *ngIf="registerForm.get('username')?.invalid">{{registerForm.get('username')?.getError('username')}}</clr-control-error>
+                    </clr-input-container>
+                    <clr-input-container>
+                        <label>Email</label>
+                        <input formControlName="email" type="email" clrInput placeholder="Email">
+                    </clr-input-container>
+                    
+                    <clr-input-container>
+                        <label>Password</label>
+                        <input formControlName="password" type="password" clrInput placeholder="Password">
+                        <clr-control-error *ngIf="registerForm.get('password')?.invalid">{{registerForm.get('password')?.getError('password')}}</clr-control-error>
+                    </clr-input-container>
+                    <clr-input-container style="margin-bottom: 20px;">
+                        <label>Comfirm</label>
+                        <input formControlName="confirm" type="password" clrInput placeholder="Confirm">
+                        <clr-control-error *ngIf="registerForm.get('confirm')?.invalid">Password don't Match</clr-control-error>
+                    </clr-input-container>
+                    <button class="btn btn-Secondary" type="button" routerLink="/login">Login</button>
+                    <button class="btn btn-primary" type="submit" [disabled]="registerForm.invalid">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="clr-col"></div>
+</div>

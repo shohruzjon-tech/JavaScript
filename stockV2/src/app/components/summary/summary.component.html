@@ -1,7 +1,9 @@
-<div >
+<div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp" [ngClass]="{increasing:isPositive(),decreasing: isNegative()}">
     <span>
         <h4>
-            {{stock?.symbol.toUpperCase}}<br/>
+            {{stock?.symbol|uppercase}}<br/>
+            {{stock?.lastTradePriceOnly|currency:'USD'}}<br/>
+            {{stock?.change|currency:'USD':'symbol':'0.2'}}({{stock?.changeInPercent|percent:'0.2'}})
         </h4>
     </span>
 </div>

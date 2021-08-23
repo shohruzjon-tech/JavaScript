@@ -1,0 +1,21 @@
+<header class="header header-2">
+    <div class="branding">
+        <span class="title">QuickPoll</span>
+    </div>
+    <div class="header-actions">
+            <a class="nav-link" (click)="questionForm.openModal=true">
+                <span>Question</span> 
+                <clr-icon shape="logout"></clr-icon>
+            </a>
+            <a class="nav-link">
+                Reload
+            </a>
+            <a class="nav-link">
+                Login
+            </a>
+    </div>
+    <div class="search">
+
+    </div>
+</header>
+<app-question-form #questionForm></app-question-form>

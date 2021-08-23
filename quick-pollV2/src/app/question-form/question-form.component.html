@@ -1,0 +1,19 @@
+<clr-modal class="modal" [(clrModalOpen)]="openModal">
+    <div class="modal-title">New Question</div>
+    <div class="modal-body">
+        <form class="clr-form clr-form-vertical">
+            <div class="clr-input-container ">
+                <label >Question</label>
+                <input class="clr-input" [(ngModel)]="poll.question" name="question"placeholder="Question" style="margin-top:15px;" required>
+                <clr-control-error >Question is required</clr-control-error>
+            </div>
+            <ng-template #moreOptions></ng-template>
+            <div class="clr-input-container">
+                <button class="btn btn-link" type="button" (click)="addOption()">More Options</button>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" (click)="addQuestion()">Add</button>
+    </div>
+</clr-modal>

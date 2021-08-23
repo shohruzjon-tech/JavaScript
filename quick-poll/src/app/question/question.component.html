@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header">
+        <h4 class="title">{{question.question}}</h4>
+    </div>
+    <div class="card-block">
+        <div class="card-text">
+            <ul>
+                <li *ngFor="let option of question.options">{{option.value}}</li>
+            </ul>
+            <span class="nav-footer">Posted {{created|date:'medium'}}</span>        
+        </div>
+    </div>
+    <div class="card-footer">
+        <Button class="btn btn-icon" (click)="edit()">
+            <clr-icon shape="pencil"></clr-icon>
+        </Button>
+        <Button class="btn btn-icon btn-danger" (click)="delete()">
+            <clr-icon shape='trash'></clr-icon>
+        </Button>
+    </div>
+</div>

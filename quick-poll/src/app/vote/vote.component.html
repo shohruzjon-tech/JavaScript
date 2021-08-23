@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-header">
+        <h4 class="title">{{question.question}}</h4>
+    </div>
+    <div class="card-block">
+        <clr-radio-container>
+            <clr-radio-wrapper *ngFor="let option of question.options">
+                <input type="radio" clrRadio [(ngModel)]="voted" name="{{question.id}}" value="{{question.id+option.value}}" (click)="picked(question.id+option.value)" />
+                <label>{{option.value}}</label>
+            </clr-radio-wrapper >
+        </clr-radio-container>
+    </div>
+    <div class="card-footer">
+        <Button class="btn btn-icon" (click)="vote()" aria-label="Vote">
+            <clr-icon shape="check"></clr-icon>
+        </Button>
+    </div>
+</div>

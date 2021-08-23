@@ -5,12 +5,16 @@ import{HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {StockService} from './services/stock.service';
-import { SummaryComponent } from './components/summary/summary.component'
+import { SummaryComponent } from './components/summary/summary.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ManageComponent } from './components/manage/manage.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    SummaryComponent
+    SummaryComponent,
+    DashboardComponent,
+    ManageComponent
   ],
   imports: [
     BrowserModule,

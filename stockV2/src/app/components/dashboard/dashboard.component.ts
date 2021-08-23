@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StockService,StockInterface} from '../../services/stock-service.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  symbols: Array<string>;
+  stocks: Array<StockInterface> =[];
+  constructor(private service:StockService) {
+    this.symbols = service.get();
+  }
 
   ngOnInit(): void {
+    this.service.load(this.symbols).subscribe(stocks=> this.stocks =stocks);
   }
 
 }

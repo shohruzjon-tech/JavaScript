@@ -1,0 +1,6 @@
+<th scope="row">{{node.name}}</th>
+<td [class.table-danger]="isDanger('cpu')">{{node.cpu.used}}/{{node.cpu.available}}</td>
+<td [class.table-danger]="isDanger('cpu')">{{node.cpu.used/node.cpu.available|percent:'0.2'}}</td>
+<td [class.table-danger]="isDanger('mem')">{{node.mem.used}}/{{node.mem.available}}</td>
+<td [class.table-danger]="isDanger('mem')">{{node.mem.used/node.mem.available|percent:'0.2'}}</td>
+<td><button (ch)class="btn btn-secondary" (click)="view(node)">View</button></td>

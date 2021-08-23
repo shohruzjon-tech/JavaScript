@@ -1,0 +1,10 @@
+<div class="card">
+    <div class="card-body">
+        <nav class="navbar navbar-dark bg-primary mb-1" [ngClass]="{'bg-success': !isDanger(),'bg-danger':isDanger()}">
+            <h4 class="navbar-brand mr-auto"><ng-content select="metric-title"></ng-content></h4>
+        </nav>
+        <h4 class="card-title">{{value}}/{{max}} ({{(value/max)|percent:'0.2'}})</h4>
+        <p><ng-content select="metric-description"></ng-content></p>
+        <ngb-progressbar [value]="value" [max]="max" [type] = "isDanger() ? 'danger':'success'"></ngb-progressbar>
+    </div>
+</div>

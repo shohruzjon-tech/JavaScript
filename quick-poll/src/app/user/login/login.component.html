@@ -1,0 +1,27 @@
+<div class="clr-row clr-aling-items-center">
+    <div class="clr-col"></div>
+    <div class="clr-col-5 ">
+        <div class="card">
+            <div class="card-header">
+                <span>Login</span>
+            </div>
+            <div class="card-content">
+                <form clrForm [formGroup]="loginForm" (submit)="login()">
+                    <clr-input-container>
+                        <label>Username</label>
+                        <input formControlName="username" type="text" clrInput placeholder="Username"/>
+                        <clr-control-error *ngIf="loginForm.get('username')?.invalid">Username is Required</clr-control-error>
+                    </clr-input-container>                    
+                    <clr-input-container>
+                        <label>Password</label>
+                        <input formControlName="password" type="password" clrInput placeholder="Password"/>
+                        <clr-control-error *ngIf="loginForm.get('password')?.invalid">Password is Required</clr-control-error>
+                    </clr-input-container>                    
+                    <button class="btn btn-Secondary" type="button" routerLink="/register">Register</button>
+                    <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid" >Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="clr-col"></div>
+</div>
